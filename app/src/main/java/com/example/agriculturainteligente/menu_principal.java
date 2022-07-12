@@ -39,6 +39,11 @@ public class menu_principal extends AppCompatActivity {
 
     }
 
+    public void cardSensor(View view){
+        Intent menuSensores = new Intent(this, menu_sensores.class);
+        startActivity(menuSensores);
+    }
+
     public void cerrarSesion(View view){
         FirebaseAuth.getInstance().signOut();
         finish();
@@ -46,4 +51,6 @@ public class menu_principal extends AppCompatActivity {
         intent.putExtra("msg", "cerrarSesion");
         startActivity(intent);
     }
+
+
 }
