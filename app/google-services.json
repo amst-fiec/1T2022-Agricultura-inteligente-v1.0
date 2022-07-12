@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "651478430719",
+    "project_id": "agriculturainteligente-amst",
+    "storage_bucket": "agriculturainteligente-amst.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651478430719:android:9c76508b702a0fd13d6dca",
+        "android_client_info": {
+          "package_name": "com.example.agriculturainteligente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651478430719-uv3uc05v2cslc54at2im7ttrpjl0flob.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agriculturainteligente",
+            "certificate_hash": "bd0794b87c5a36e40edef4ba5969b08326cc058a"
+          }
+        },
+        {
+          "client_id": "651478430719-uqpj83bbf4mhr4t0r22kid9k6ubevdsn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqCYONAjdPkM7jvWOJpNlVKZ94WM1UowQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651478430719-uqpj83bbf4mhr4t0r22kid9k6ubevdsn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
