@@ -3,9 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/rober/AndroidProjects/1T2022-Agricultura-inteligente-v1.0/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/rober/AndroidProjects/1T2022-Agricultura-inteligente-v1.0/app/src/main/res/layout/activity_menu_principal.xml" value="0.2" />
-        <entry key="..\:/rober/AndroidProjects/1T2022-Agricultura-inteligente-v1.0/app/src/main/res/layout/activity_menu_sensores.xml" value="0.2359375" />
+        <entry key="..\:/Users/ALEXIS MICABAL/StudioProjects/1T2022-Agricultura-inteligente-v1.0/app/src/main/res/layout/activity_menu_sensores.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ALEXIS MICABAL/StudioProjects/1T2022-Agricultura-inteligente-v1.0/app/src/main/res/layout/usuario_ac.xml" value="0.253125" />
       </map>
     </option>
   </component>
@@ -14,12 +13,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.2" />
-      </ProjectState>
-    </option>
   </component>
 </project>

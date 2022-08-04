@@ -1,19 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="Atras"
-    tools:context=".menu_sensores">
+    android:background="@drawable/fondo">
 
-    <Button
-        android:id="@+id/button2"
+    <TextView
+        android:id="@+id/mensajeBienvenida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:text="bienvenida"
+        android:textColor="?android:attr/colorActivatedHighlight"
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Presione para alimentar:"
+        android:textColor="?android:attr/colorActivatedHighlight"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mensajeBienvenida" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="134dp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/humedad"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/humedad" />
+
+                <Button
+                    android:id="@+id/temperatura"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/temperatura"
+                    android:scrollHorizontally="false" />
+            </LinearLayout>
+
+            <!--
+            <Button
+                android:id="@+id/horario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:background="@drawable/contorno_btn2"
+                android:onClick="onClick"
+                android:text="@string/horario_de_comida" />
+
+            <Button
+                android:id="@+id/verMascota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_margin="20dp"
+                android:background="@drawable/contorno_btn2"
+                android:onClick="onClick"
+                android:text="@string/ver_mis_mascotas" />
+
+            <Button
+                android:id="@+id/registroMascota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_margin="20dp"
+                android:background="@drawable/contorno_btn2"
+                android:onClick="onClick"
+                android:text="@string/registrar_mascota" />
+
+            <Button
+                android:id="@+id/eliminarUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_margin="20dp"
+                android:background="@drawable/contorno_btn2"
+                android:onClick="onClick"
+                android:text="@string/eliminar_usuario" />
+
+            <Button
+                android:id="@+id/cerrarSesion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_margin="20dp"
+                android:background="@drawable/contorno_btn2"
+                android:onClick="onClick"
+                android:text="@string/cerrar_sesi_n" />
+                -->
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
