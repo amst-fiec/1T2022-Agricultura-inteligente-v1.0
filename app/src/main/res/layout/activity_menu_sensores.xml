@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Presione para alimentar:"
+        android:text="Presione un sensor:"
         android:textColor="?android:attr/colorActivatedHighlight"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -57,14 +57,16 @@
                     android:id="@+id/humedad"
                     android:layout_width="120dp"
                     android:layout_height="100dp"
-                    android:background="@drawable/humedad" />
+                    android:background="@drawable/humedad"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
                     android:id="@+id/temperatura"
                     android:layout_width="120dp"
                     android:layout_height="100dp"
                     android:background="@drawable/temperatura"
-                    android:scrollHorizontally="false" />
+                    android:scrollHorizontally="false"
+                    tools:ignore="SpeakableTextPresentCheck" />
             </LinearLayout>
 
             <!--

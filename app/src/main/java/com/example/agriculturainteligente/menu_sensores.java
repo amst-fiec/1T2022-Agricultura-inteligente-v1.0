@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class menu_sensores extends AppCompatActivity {
-
     //Se crean las diferentes variables de estado de la actividad
     private TextView bienvenida;
     private String nombreUsuario;
@@ -37,9 +36,7 @@ public class menu_sensores extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
 
         bienvenida= (TextView) findViewById(R.id.mensajeBienvenida);
-        bienvenida.setText("Bienvenid@ "+bundle.getString("nombre"));
 
-        nombreUsuario=bundle.getString("nombre");//BORRAR ESTA LINES Si se eliminan los botones d actualizar Datos d usuario
         //Se instancian los botonees creados en el XML
         btn1= (Button)findViewById(R.id.humedad);
         btn2= (Button)findViewById(R.id.temperatura);
@@ -55,14 +52,17 @@ public class menu_sensores extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                solicitud("?H2");
                 servo1= true;
+                solicitud("?H2");
+                System.out.println("hola1");
+
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 solicitud("?H3");
+                System.out.println("hola1");
                 servo2= true;
             }
         });
@@ -111,12 +111,13 @@ public class menu_sensores extends AppCompatActivity {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
         //Nombre de la ip mas la extension del localhost
-        String url= "http://192.168.3.8/"+comando;
+        String url= "http://192.168.3.20/"+comando;
         if(networkInfo != null && networkInfo.isConnected()) {
             //Conexion directa a la extension
             new DownloadWebpageTask().execute(url);
         }else{
             //txtresultado.setText("Conexion detectada");
+            System.out.println("conexion fallida");
         }
     }
 
@@ -134,12 +135,13 @@ public class menu_sensores extends AppCompatActivity {
         @Override
         protected String doInBackground(String... urls) {
             Conexion conexion= new Conexion();
-
+            System.out.println(urls[0]);
             return conexion.GetArduino(urls[0]);
         }
         //@Override
         protected void onPostExecute(String result) {
             if(result!= null){
+
                 if(result.contains("Switch ON - Pin2") && servo1==true){
                     //btn1.setText("ACTIVADO");
                     System.out.println("hola1");

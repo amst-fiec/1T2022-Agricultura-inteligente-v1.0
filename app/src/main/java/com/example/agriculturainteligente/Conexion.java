@@ -20,7 +20,9 @@ public class Conexion {
             URL url= new URL(urlString);
             //Se conecta a la URL designada en el constructor del método
             HttpURLConnection httpsURLConnection = (HttpURLConnection) url.openConnection();
+            System.out.println(httpsURLConnection.getResponseCode());
             if(httpsURLConnection.getResponseCode() == 200){
+
                 //Se empieza a recolectar toda la informacion que existe en el LocalHost, codigo HTML
                 InputStream inputStream= new BufferedInputStream(httpsURLConnection.getInputStream());
 
