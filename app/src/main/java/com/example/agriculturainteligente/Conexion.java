@@ -1,50 +1,36 @@
 package com.example.agriculturainteligente;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
-import   javax.net.ssl.HttpsURLConnection;
+import android.bluetooth.BluetoothA2dp;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
-public class Conexion {
-    //se crea una variable tipo String de datos para guardar la informacion que existe en el localHost
-    private String datos= null;
-    //se crea un metodo que permite hacer la conexion con el localHost que a su vez esta conectado a arduino
-    public String GetArduino(String urlString){
+import androidx.appcompat.app.AppCompatActivity;
 
-        try{
-            URL url= new URL(urlString);
-            //Se conecta a la URL designada en el constructor del método
-            HttpURLConnection httpsURLConnection = (HttpURLConnection) url.openConnection();
-            System.out.println(httpsURLConnection.getResponseCode());
-            if(httpsURLConnection.getResponseCode() == 200){
+import ingenieria.jhr.bluetoothjhr.BluetoothJhr;
 
-                //Se empieza a recolectar toda la informacion que existe en el LocalHost, codigo HTML
-                InputStream inputStream= new BufferedInputStream(httpsURLConnection.getInputStream());
+public class Conexion extends AppCompatActivity {
 
-                BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream,"UTF-8"));
+    ListView dispositivos;
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_conexion);
 
-                StringBuilder stringBuilder= new StringBuilder();
+        dispositivos = findViewById(R.id.dispositivos);
 
-                String linea;
-                //Se recorre la informacion linea a linea y se lo almacena en un variable de titpo StringBuilder
-                while((linea= bufferedReader.readLine()) != null){
-                    stringBuilder.append(linea);
-                }
-                //Se copia toda la informacion guardad en la variable stringBuilder en la variable datos
-                datos= stringBuilder.toString();
-                //se desconecta la conexion con el LocalHost
-                httpsURLConnection.disconnect();
+        final BluetoothJhr blue= new BluetoothJhr(this, dispositivos, menu_sensores.class);
+
+        blue.onBluetooth();
+
+        dispositivos.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?>adapterView, View view, int i, long l){
+                blue.bluetoothSeleccion(i);
             }
-
-        }catch (IOException io){
-            return null;
-        }
-        //este metodo retorna la informacion que se encuentra en la variable datos
-        return datos;
+        });
     }
+
 }

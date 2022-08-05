@@ -48,4 +48,9 @@ dependencies {
 
     implementation "androidx.cardview:cardview:1.0.0"
     implementation "androidx.gridlayout:gridlayout:1.0.0"
+
+    implementation files("F:/Descargas/bluetoothjhr.aar");
+    implementation files("F:/Descargas/temperaturaJhr.aar")
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.31"
 }
