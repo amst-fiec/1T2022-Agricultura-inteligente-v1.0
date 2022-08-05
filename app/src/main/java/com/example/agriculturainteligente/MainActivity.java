@@ -7,6 +7,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         if(msg != null){
             if(msg.equals("cerrarSesion")){
                 cerrarSesion();
+                mostrarAlerta();
             }
         }
     }
@@ -105,5 +107,12 @@ public class MainActivity extends AppCompatActivity {
         } else {
             System.out.println("sin registrarse");
         }
+    }
+
+    private void mostrarAlerta(){
+        new AlertDialog.Builder(this)
+                .setTitle("Error al iniciar sesion")
+                .setMessage("El usuario ingresado no es el correcto")
+                .show();
     }
 }
