@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".menu_sensores"
-    android:orientation="vertical"
-    >
+    android:layout_height="match_parent">
 
-    <TextView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:padding="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        app:itemIconSize="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu"/>
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/display"
-        >
-    </TextView>
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
 
-
-
-    <com.example.termometro_create.TermometroJhr
-        android:id="@+id/termometroJhr"
-        android:layout_width="270dp"
-        android:layout_height="413dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="-700dp"
-        app:colorTemperatura="#EB0008"
-        app:colorTermometro="#651FFF"
-        app:offsetX="-40"
-        app:offsetY="-10"
-        app:textOn="true"
-        app:textSizeTemp="40"
-        app:textTemp="  ºC"></com.example.termometro_create.TermometroJhr>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
